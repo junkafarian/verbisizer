@@ -45,7 +45,9 @@ def load_words(basedir):
             raise RuntimeError
 
         with open(abs_filename, 'r') as f:
-            WORD_MAP[t] = [word.strip() for word in f.readlines()]
+            WORD_MAP[filename.replace('s.txt', '')] = [
+                word.strip() for word in f.readlines()
+            ]
 
 
 def get_word(word_type):
